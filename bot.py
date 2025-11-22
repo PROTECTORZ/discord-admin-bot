@@ -10,7 +10,7 @@ import os
 
 # ==================== CONFIGURATION ====================
 
-TOKEN = os.getenv('DISCORD_BOT_TOKEN', 'My token')
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 ALLOWED_ROLES = ['Admin', 'Moderator', 'Head-Admin']
 
 commands_queue = []

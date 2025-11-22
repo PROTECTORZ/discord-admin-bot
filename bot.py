@@ -8,6 +8,24 @@ from threading import Thread
 import time
 import os
 
+import threading
+from flask import Flask
+import os
+
+# Health check web server
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_server():
+    port = int(os.getenv("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
+
+threading.Thread(target=run_server).start()
+
+
 # ==================== CONFIGURATION ====================
 
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
